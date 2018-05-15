@@ -83,27 +83,25 @@ sudo apt-get install vagrant
 
 **Note:** Some Linux distributions ship very outdated version of VirtualBox. It is recommended to use the most recent version. This can be downloaded from [their website](https://www.virtualbox.org/wiki/Downloads). Outdated versions, and host/guest version mismatch are known to cause all sorts of troubles during provisioning.
 
-After the installations you will see some directories, for example:
-``` BASH
-vagrant, vagrant-master, virtualbox-5.1_5.1.28-117968~Ubuntu~xenial_amd64.deb
-```
-The vagrant directory contains:
-``` BASH
-LICENSE, README.md, basic-fedora, dev-fedora, docker-fedora, light, rpm
-```
-You will be working from the rpm directory, as shown in the code below.
+Please check [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) for more installation details.
 
-Once vagrant and virtualbox are installed, you have to install a Linux kernel in the virtualbox and then install the CamFlow LSM within it. This process is called "provisioning". After that, you must halt the execution in the virtualbox and select the new kernel that contains the CamFlow LSM:
-
+Once vagrant and virtualbox are installed, you need to obtain CamFlow vagrant provision script:
 ``` BASH
 git clone https://github.com/CamFlow/vagrant.git
-cd ./vagrant/rpm
+cd ./vagrant
+```
+
+There is different provision script available, please see in the [camflow/vagrant](https://github.com/CamFlow/vagrant) for details on what they do. We will use the rpm as an example:
+``` BASH
+cd ./rpm
 vagrant plugin install vagrant-vbguest
 vagrant up
 # we reboot after the provisioning
 vagrant halt
 vagrant up
 ```
+
+## After Reboot
 
 When booting a VM after successful provisioning, ensure that the CamFlow kernel is chosen in the [GRUB](https://www.gnu.org/software/grub/) menu:
 ![Select CamFlow kernel in the grub menu](http://camflow.org/img/grub.png)
