@@ -1,4 +1,4 @@
-Description of the types of edge currently supported. In doubt, refer to the following [file](https://github.com/CamFlow/camflow-dev/blob/dev/include/uapi/linux/provenance_types.h).
+Description of the types of edge currently supported. If in doubt, refer to [`dev/include/uapi/linux/provenance_types.h`](https://github.com/CamFlow/camflow-dev/blob/dev/include/uapi/linux/provenance_types.h).
 
 **string in configuration file/CLI** | **defined in #include<linux/provenance_types.h>** | description | prov type |
 |------------------------------------|---------------------------------------------| ------------|-----------|
