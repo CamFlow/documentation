@@ -10,5 +10,6 @@ CamFlow can stack with existing security modules such as SELinux.
 * [Configuration](./docs/configuration.md)
 * [Using CamFlow for the first time](./docs/tutorial.md)
 * [Understanding CamFlow W3C Output](./docs/w3c.md)
+* [Understanding CamFlow SPADE Output](./docs/spade.md)
 * [Edge list](./docs/edges.md)
 * [Vertex list](./docs/vertices.md)
