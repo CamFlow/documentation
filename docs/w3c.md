@@ -39,7 +39,7 @@ _Example of write edge:_
 ```
 
 
-Vertex and edges attributes under prov: namespace are described in the [W3C PROV-JSON documentation](https://www.w3.org/Submission/2013/SUBM-prov-json-20130424/). The possible value for the prov:type are described [here for edges](https://github.com/CamFlow/CamFlow.github.io/wiki/Edge-types) and [there for vertex](https://github.com/CamFlow/CamFlow.github.io/wiki/Vertex-types) We describe here, attributes under the cf: (**C**am**F**low) namespace.
+Vertex and edges attributes under prov: namespace are described in the [W3C PROV-JSON documentation](https://www.w3.org/Submission/2013/SUBM-prov-json-20130424/). The possible value for the prov:type are described [here for edges](./edges.md) and [there for vertex](./vertices.md) We describe here, attributes under the cf: (**C**am**F**low) namespace.
 
 ## General attributes
 
