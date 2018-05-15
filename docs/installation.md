@@ -1,10 +1,10 @@
-## Installing CamFlow
+# Installing CamFlow
 
 There are two options to install CamFlow: (1) building the kernel on the local machine; or (2) use [vagrant](https://www.vagrantup.com/) to set up a virtual machine.
 
-### 1. Installation via the package manager
+## 1. Installation via the package manager
 
-The quickest way to install CamFlow is through the packages hosted on [packagecloud](https://packagecloud.io/camflow/provenance). For now, only Fedora 26 is supported. The installation process is really simple
+The quickest way to install CamFlow is through the packages hosted on [packagecloud](https://packagecloud.io/camflow/provenance). For now, only Fedora is supported. The installation process is really simple
 
 ``` BASH
 curl -s https://packagecloud.io/install/repositories/camflow/provenance/script.rpm.sh | sudo bash
@@ -24,27 +24,27 @@ After reboot we should be ready to use CamFlow.
 sudo reboot now
 ```
 
-### Building from source
+## 2. Building from source
 
-#### Dependencies
+### Dependencies
 
 First we need to install the dependencies required to build our kernel.
 
-##### Fedora
+#### Fedora
 
 ``` BASH
 sudo dnf groupinstall 'Development Tools'
 sudo dnf install ncurses-devel cmake clang gcc-c++ wget git openssl-devel zlib patch mosquitto
 ```
 
-##### Ubuntu
+#### Ubuntu
 
 ``` BASH
 sudo apt-get -y install build-essential
 sudo apt-get -y install libncurses-dev cmake clang g++ wget git libssl-dev bc nano patch mosquitto
 ```
 
-#### Building and Installing the kernel
+### Building and Installing the kernel
 
 We first need to clone the `camflow-install` repository:
 
@@ -68,7 +68,7 @@ For the installation process to take effect you need to reboot the machine.
 sudo reboot now
 ```
 
-### 2. Setting up a vagrant virtual machine
+## 3. Setting up a vagrant virtual machine
 
 Using a vagrant virtual machine is much simpler. First you need to install [vagrant](https://www.vagrantup.com/docs/installation/) and [virtualbox](https://www.virtualbox.org/manual/ch02.html).
 
