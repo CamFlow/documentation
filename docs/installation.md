@@ -91,7 +91,7 @@ git clone https://github.com/CamFlow/vagrant.git
 cd ./vagrant
 ```
 
-There is different provision script available, please see in the [camflow/vagrant](https://github.com/CamFlow/vagrant) for details on what they do. We will use the rpm as an example:
+There are different provisioning scripts available within the `CamFlow/vagrant.git` repository: please see in the [camflow/vagrant](https://github.com/CamFlow/vagrant) for details on what they do. We will use the `rpm` provisioning script as an example:
 ``` BASH
 cd ./rpm
 vagrant plugin install vagrant-vbguest
