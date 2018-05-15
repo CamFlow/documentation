@@ -158,4 +158,4 @@ opaque=/usr/bin/bash
 [group]
 ;propagate=docker
 ```
-More information is available [here](https://github.com/CamFlow/CamFlow.github.io/wiki/Getting-Started#configuring-provenance-capture).
+More information is available [here](./configuration.md).
