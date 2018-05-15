@@ -1,6 +1,9 @@
 # Installing CamFlow
 
-There are two options to install CamFlow: (1) building the kernel on the local machine; or (2) use [vagrant](https://www.vagrantup.com/) to set up a virtual machine.
+There are three main options covered below for how to install CamFlow:
+1. Fedora-specific: using packagecloud;
+2. building the kernel on the local machine; or
+3. using [vagrant](https://www.vagrantup.com/) to set up a virtual machine.
 
 ## 1. Installation via the package manager
 
@@ -58,7 +61,7 @@ cd camflow-install
 make all
 ```
 
-This will build and install the CamFlow Linux Security Module as well as the userspace tools. The whole installation procedure may take a huge amount of time. The installation process may ask for root password.
+This will build and install the CamFlow Linux Security Module as well as the userspace tools. The whole installation procedure may take a significant amount of time. The installation process may ask for the root password, so may not complete in an unattended manner.
 
 The kernel configuration derives from the configuration currently present on the system where you run the build. Early in the build process you will be presented with a GUI to customise the kernel configuration. If you are not sure what to do, do not modify the configuration.
 
