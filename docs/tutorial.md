@@ -103,11 +103,17 @@ We can see that some provenance JSON has indeed been generated. You can check [h
 ```
 $ cat /etc/camflowd.ini
 [general]
-; used for test and debug purpose
 ; output=null
 ; output=mqtt
+; output=unix_socket
+; output=fifo
 output=log
-log=/tmp/audit.log
+
+format=w3c
+;format=spade_json
+
+[log]
+path=/tmp/audit.log
 
 [mqtt]
 address=m12.cloudmqtt.com:17065
@@ -115,6 +121,12 @@ username=camflow
 password=test
 ; message delivered: 0 at most once, 1 at least once, 2 exactly once
 qos=2
+
+[unix]
+address=/tmp/camflowd.sock
+
+[fifo]
+path=/tmp/camflowd-pipe
 ```
 The system is clearly configured to publish the provenance to a log file, and this file has been specified to be `/tmp/audit.log`. If we were to publish our provenance to MQTT, we could visualise it in real time on our [demo website](http://camflow.org/demo). Note that changes to `camflowd` configuration require the system or the service to be restarted.
 
@@ -128,16 +140,20 @@ machine_id=0
 enabled=true
 ;record provenance of all kernel object
 all=false
-; enable node compression
-compress=true
 node_filter=directory
 node_filter=inode_unknown
 node_filter=char
-relation_filter=sh_read
-relation_filter=sh_write
-propagate_node_filter=directory
-propagate_node_filter=char
-propagate_node_filter=inode_unknown
+node_filter=envp
+; propagate_node_filter=directory
+; relation_filter=sh_read
+; relation_filter=sh_write
+; propagate_relation_filter=write
+
+[compression]
+; enable node compression
+node=true
+edge=true
+duplicate=false
 
 [file]
 ;set opaque file
@@ -152,10 +168,26 @@ opaque=/usr/bin/bash
 ;record exchanged with local server
 ;record=127.0.0.1/32:80
 
+[ipv4−ingress]
+;propagate=0.0.0.0/0:80
+;propagate=0.0.0.0/0:404
+;record exchanged with local server
+;record=127.0.0.1/32:80
+
+
 [user]
 ;track=vagrant
+;propagate=vagrant
+;opaque=vagrant
 
 [group]
-;propagate=docker
+;track=vagrant
+;propagate=vagrant
+;opaque=vagrant
+
+[secctx]
+;track=system_u:object_r:bin_t:s0
+;propagate=system_u:object_r:bin_t:s0
+;opaque=system_u:object_r:bin_t:s0
 ```
 You can read more about [CamFlow configuration](./configuration.md).
