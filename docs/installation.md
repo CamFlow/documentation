@@ -37,14 +37,14 @@ First we need to install the dependencies required to build our kernel.
 
 ``` BASH
 sudo dnf groupinstall 'Development Tools'
-sudo dnf install ncurses-devel cmake clang gcc-c++ wget git openssl-devel zlib patch mosquitto
+sudo dnf install ncurses-devel cmake clang gcc-c++ wget git openssl-devel zlib patch mosquitto bison flex
 ```
 
 #### Ubuntu
 
 ``` BASH
 sudo apt-get -y install build-essential
-sudo apt-get -y install libncurses-dev cmake clang g++ wget git libssl-dev bc nano patch mosquitto
+sudo apt-get -y install libncurses-dev cmake clang g++ wget git libssl-dev bc nano patch mosquitto bison flex
 ```
 
 ### Building and Installing the kernel
