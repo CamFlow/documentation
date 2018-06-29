@@ -33,6 +33,9 @@ sudo reboot now
 
 First we need to install the dependencies required to build our kernel.
 
+Depending on how recent your OS version is, you should install `libelf-dev`, `libelf-devel`, or `elfutils-libelf-devel`.
+See this [issue](https://github.com/CamFlow/documentation/issues/3) for details.
+
 #### Fedora
 
 ``` BASH
@@ -40,11 +43,23 @@ sudo dnf groupinstall 'Development Tools'
 sudo dnf install ncurses-devel cmake clang gcc-c++ wget git openssl-devel zlib patch mosquitto bison flex
 ```
 
+For Fedora 28 and above, also run:
+
+``` BASH
+sudo dnf install elfutils-libelf-devel
+```
+
 #### Ubuntu
 
 ``` BASH
 sudo apt-get -y install build-essential
 sudo apt-get -y install libncurses-dev cmake clang g++ wget git libssl-dev bc nano patch mosquitto bison flex
+```
+
+On more recent Ubuntu releases you should also run:
+
+``` BASH
+sudo apt-get -y install libelf-dev
 ```
 
 ### Building and Installing the kernel
