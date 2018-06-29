@@ -7,7 +7,7 @@ There are three main options covered below for how to install CamFlow:
 
 ## 1. Installation via the package manager
 
-The quickest way to install CamFlow is through the packages hosted on [packagecloud](https://packagecloud.io/camflow/provenance). For now, only Fedora is supported. The installation process is really simple
+The quickest way to install CamFlow is through the packages hosted on [packagecloud](https://packagecloud.io/camflow/provenance). For now, only Fedora is supported (please, click on this [link](https://packagecloud.io/camflow/provenance) and check which Fedora release(s) is/are currently supported). The installation process is really simple
 
 ``` BASH
 curl -s https://packagecloud.io/install/repositories/camflow/provenance/script.rpm.sh | sudo bash
