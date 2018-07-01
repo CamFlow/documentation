@@ -105,10 +105,6 @@ As with relation_filter, you can specify this parameter multiple times for vario
 
 ### compression
 
-TODO I couldn't find any relevant references to "compression" in the SoCC paper describing CamFlow.
-As a result, this description is based on the concept from Ma 2018 "Kernel-Supported Cost-Effective Audit Logging for Causality Tracking".
-Let's see if I'm right...maybe only for the "duplicate" parameter?
-
 "Compressing" provenance means emitting as few provenance records as possible to capture an interaction.
 For example, if a process reads a file three times, then a compressed provenance record would contain only one read relation while a complete provenance record would contain three relations.
 
@@ -118,7 +114,7 @@ In this example compression may be undesirable.
 
 | parameter | description |
 |-----------|-------------|
-| `node`      | boolean; if true only create new version to avoid cycle, if false create new version on object state change |
+| `node`      | boolean; if true only create new version to avoid cycle, if false create new version on object state change (i.e. when receiving information from other objects) |
 | `edge`      | boolean; if true do not repeat multiple consecutive edge of the same type |
 | `duplicate` | boolean; if true publish end nodes associated to a given edge, if false only publish nodes once |
 
@@ -129,13 +125,12 @@ This describes provenance capture behavior for files.
 | parameter | description |
 |-----------|-------------|
 | `opaque`    | provenance is not captured for any interactions with this file |
-| `track`     | directly track any information flow to/from this file and any process resulting from the execution of programs built from it |
+| `track`     | directly track any information flow to/from this file and any process resulting from its execution |
 | `propagate` | transitively track any information flow to/from this file |
 
 #### track
 
 Use `track` if you want the provenance information to include every time this file is read or written.
-TODO: What does "built from it" mean?
 
 #### propagate
 
