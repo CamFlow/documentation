@@ -4,7 +4,7 @@ One of the strengths of CamFlow is the ability to fine-tune the provenance infor
 
 The configuration file is `/etc/camflow.ini`.
 
-To apply a new configuration, `sudo systemctl restart camconfd.service` or simply reboot the machine.
+To apply a new configuration, simply reboot the machine.
 
 ## Sample configuration
 
@@ -150,7 +150,7 @@ Track information leaving the system being monitored.
 | `propagate` | similar to file, but for data to this IPv4 address |
 | `record`    | record packet coming through the specified interface |
 
-Specify an IPv4 address using the format ???.
+Specify an IPv4 address using the format <ip>/<mask>:<port>.
 
 ### ipv4-ingress
 
