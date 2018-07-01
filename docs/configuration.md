@@ -4,7 +4,7 @@ One of the strengths of CamFlow is the ability to fine-tune the provenance infor
 
 The configuration file is `/etc/camflow.ini`.
 
-To apply a new configuration, ???.
+To apply a new configuration, `sudo systemctl restart camconfd.service` or simply reboot the machine.
 
 ## Sample configuration
 
@@ -82,8 +82,8 @@ A "boolean" parameter accepts values "true" or "false".
 | `all`         | boolean; record provenance of all kernel objects? |
 | `node_filter` | do not capture this kind of node (i.e. vertex) |
 | `relation_filter`           | do not capture this kind of relation (i.e. edge) |
-| `propagate_node_filter`     | ??? |
-| `propagate_relation_filter` | ??? |
+| `propagate_node_filter`     | propagate tracking through this kind of node (i.e. vertex) |
+| `propagate_relation_filter` | propagate tracking through this kind of relation (i.e. edge) |
 
 #### node_filter
 
@@ -106,7 +106,7 @@ As with relation_filter, you can specify this parameter multiple times for vario
 ### compression
 
 TODO I couldn't find any relevant references to "compression" in the SoCC paper describing CamFlow.
-As a result, this description is based on the concept from Ma 2018 "Kernel-Supported Cost-Effective Audit Logging for Causality Tracking". 
+As a result, this description is based on the concept from Ma 2018 "Kernel-Supported Cost-Effective Audit Logging for Causality Tracking".
 Let's see if I'm right...maybe only for the "duplicate" parameter?
 
 "Compressing" provenance means emitting as few provenance records as possible to capture an interaction.
@@ -118,9 +118,9 @@ In this example compression may be undesirable.
 
 | parameter | description |
 |-----------|-------------|
-| `node`      | boolean; compress nodes? |
-| `edge`      | boolean; compress edges? |
-| `duplicate` | boolean; ??? |
+| `node`      | boolean; if true only create new version to avoid cycle, if false create new version on object state change |
+| `edge`      | boolean; if true do not repeat multiple consecutive edge of the same type |
+| `duplicate` | boolean; if true publish end nodes associated to a given edge, if false only publish nodes once |
 
 ### file
 
@@ -148,11 +148,11 @@ Track information leaving the system being monitored.
 | parameter | description |
 |-----------|-------------|
 | `propagate` | similar to file, but for data to this IPv4 address |
-| `record`    | ??? |
+| `record`    | record packet coming through the specified interface |
 
 Specify an IPv4 address using the format ???.
 
-### ipv4-ingress 
+### ipv4-ingress
 
 Track information entering the system being monitored.
 
@@ -171,19 +171,15 @@ Like `file`, but for users.
 | `track`   | " |
 | `propagate` | " |
 
-TODO Can I also specify uid?
-
 ### group
 
 Like `file`, but for groups.
-
-TODO Can I also specify gid?
 
 ### secctx
 
 Same as `file`, but for security contexts.
 
-Specify a security context using the format ???.
+Specify a security context using the format of the main Linux Security Module of the system (see [here](https://selinuxproject.org/page/NB_SC) for SELinux).
 
 ## Additional information
 
