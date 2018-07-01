@@ -145,7 +145,7 @@ Track information leaving the system being monitored.
 | `propagate` | similar to file, but for data to this IPv4 address |
 | `record`    | record packet coming through the specified interface |
 
-Specify an IPv4 address using the format <ip>/<mask>:<port>.
+Specify an IPv4 address using the format `<ip>/<mask>:<port>`.
 
 ### ipv4-ingress
 
