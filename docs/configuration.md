@@ -82,8 +82,8 @@ A "boolean" parameter accepts values "true" or "false".
 | `all`         | boolean; record provenance of all kernel objects? |
 | `node_filter` | do not capture this kind of node (i.e. vertex) |
 | `relation_filter`           | do not capture this kind of relation (i.e. edge) |
-| `propagate_node_filter`     | propagate tracking through this kind of node (i.e. vertex) |
-| `propagate_relation_filter` | propagate tracking through this kind of relation (i.e. edge) |
+| `propagate_node_filter`     | do not propagate tracking through this kind of node (i.e. vertex) |
+| `propagate_relation_filter` | do not propagate tracking through this kind of relation (i.e. edge) |
 
 #### node_filter
 
