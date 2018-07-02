@@ -78,12 +78,23 @@ A "boolean" parameter accepts values "true" or "false".
 | parameter | description |
 |-----------|-------------|
 | `machine_id`  | unique identifier for the machine in provenance records, use hostid if set to 0 |
-| `enabled`     | boolean; enable provenance capture? |
-| `all`         | boolean; record provenance of all kernel objects? |
+| `enabled`     | boolean; enable provenance capture? if false, the rest of the parameters do not matter |
+| `all`         | boolean; capture provenance of all kernel objects? |
 | `node_filter` | do not capture this kind of node (i.e. vertex) |
 | `relation_filter`           | do not capture this kind of relation (i.e. edge) |
 | `propagate_node_filter`     | do not propagate tracking through this kind of node (i.e. vertex) |
 | `propagate_relation_filter` | do not propagate tracking through this kind of relation (i.e. edge) |
+
+#### all
+
+| value    | effect |
+|----------|--------|
+| `true`   | capture provenance for all objects |
+| `false`  | capture no provenance except for indicated objects (specified via `file`, `ipv4-ingress`, etc.) |
+
+In either case the provenance record is affected by:
+- graph filters (`node_filter`, `propagate_node_filter`, etc.)
+- any object marked `opaque`
 
 #### node_filter
 
@@ -93,7 +104,7 @@ See [here](https://github.com/CamFlow/camflow-dev/blob/master/docs/VERTICES.md) 
 #### relation_filter
 
 You can specify the relation_filter parameter multiple times, with a different relation type each time.
-See [here](https://github.com/CamFlow/camflow-dev/blob/master/docs/RELATIONS.md) for a complete list of edge types.
+See [here](https://github.com/CamFlow/camflow-dev/blob/master/docs/RELATIONS.md) for the list of supported relation types.
 
 #### propagate_node_filter
 
@@ -102,6 +113,11 @@ As with node_filter, you can specify this parameter multiple times for various n
 #### propagate_relation_filter
 
 As with relation_filter, you can specify this parameter multiple times for various relation types.
+
+#### Notes on filters
+
+No provenance records are emitted for nodes (relations) indicated by `X_filter=Y`.
+For nodes (relations) indicated by `propagate_X_filter=Y`, records will be emitted but tracking will not be propagated through them.
 
 ### compression
 
@@ -114,9 +130,9 @@ In this example compression may be undesirable.
 
 | parameter | description |
 |-----------|-------------|
-| `node`      | boolean; if true only create new version to avoid cycle, if false create new version on object state change (i.e. when receiving information from other objects) |
-| `edge`      | boolean; if true do not repeat multiple consecutive edge of the same type |
-| `duplicate` | boolean; if true publish end nodes associated to a given edge, if false only publish nodes once |
+| `node`      | boolean; if true only create a new version of an object to avoid a cycle, if false create a new version on any object state change (i.e. when receiving information from other objects) |
+| `edge`      | boolean; if true do not repeat multiple consecutive edges of the same type |
+| `duplicate` | boolean; if true publish the vertex pair associated with a relation when publishing that relation, if false omit any previously-published vertices |
 
 ### file
 
@@ -138,23 +154,23 @@ Use `propagate` if you want the provenance information to track the flow of data
 
 ### ipv4-egress
 
-Track information leaving the system being monitored.
+Track information leaving the system being monitored (`connect`).
 
 | parameter | description |
 |-----------|-------------|
-| `propagate` | similar to file, but for data to this IPv4 address |
-| `record`    | record packet coming through the specified interface |
+| `propagate` | similar to file, but for data sent to this IPv4 address |
+| `record`    | like `propagate`, but also capture packet content |
 
 Specify an IPv4 address using the format `<ip>/<mask>:<port>`.
 
 ### ipv4-ingress
 
-Track information entering the system being monitored.
+Track information entering the system being monitored (`bind`).
 
 | parameter | description |
 |-----------|-------------|
 | `propagate` | see ipv4-egress |
-| `record`    | see to ipv4-egress |
+| `record`    | see ipv4-egress |
 
 ### user
 
@@ -291,4 +307,4 @@ If `output=fifo`, these parameters take effect.
 
 | parameter | description |
 |-----------|-------------|
-| path      | publish to the fifo at this path |
+| `path`    | publish to the fifo at this path |
