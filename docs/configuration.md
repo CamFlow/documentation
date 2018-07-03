@@ -4,9 +4,8 @@ One of the strengths of CamFlow is the ability to fine-tune the provenance infor
 
 The configuration file is `/etc/camflow.ini`.
 
-To apply a new configuration, do one of the following:
-- reboot the machine
-- edit via the `camflow` CLI (TODO Will these changes be persisted?)
+To apply a new configuration, reboot the machine. Alternatively when developing policy you can experiment using `camflow` CLI (see `camflow -h`).
+Note that policy defined through the CLI are not persisted in current release.
 
 ## Sample configuration
 
