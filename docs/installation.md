@@ -86,6 +86,19 @@ For the installation process to take effect you need to reboot the machine.
 sudo reboot now
 ```
 
+You can install older release of CamFlow as follow:
+
+``` BASH
+
+git clone https://github.com/CamFlow/camflow-install
+cd camflow-install
+make v0.4.2
+sudo reboot now
+```
+
+Repalce `v0.4.2` by your desired target version.
+Please, note that only the most recent release is actively supported.
+
 ## 3. Setting up a vagrant virtual machine
 
 Using a vagrant virtual machine is much simpler. First you need to install [vagrant](https://www.vagrantup.com/docs/installation/) and [virtualbox](https://www.virtualbox.org/manual/ch02.html).
