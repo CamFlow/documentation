@@ -32,8 +32,8 @@ sudo camflow -a true
 sudo camflow -a false
 ```
 
-We turned on and off whole-system provenance capture. We know run:
+Those commands turned on and off whole-system provenance capture. You now run:
 ```
 dmesg
 ```
-We should see a list of edges and vertices.
+You should see a list of edges and vertices.
