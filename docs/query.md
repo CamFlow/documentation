@@ -1,5 +1,7 @@
 **Under Construction**
 
+Academic article discussing CamFlow query features is available [online](http://camflow.org/publications/ccs-2018.pdf).
+
 We assume a machine with CamFlow newly installed and running. 
 More info on how to [install](https://github.com/CamFlow/documentation/blob/master/docs/installation.md) and [run](https://github.com/CamFlow/documentation/blob/master/docs/tutorial.md) CamFlow are available. 
 To build and load the demo query, do as follow:
