@@ -51,17 +51,32 @@ $ camflow -h
 We should check the current configuration state:
 ```
 $ camflow -s
-Policy hash: 141469288B16F0FFD7E575CEA156FA3EA3FCDD4C62A0381C3588152D2D17E7
+Machine id: 1432182110
+Policy hash: 4E328A9975F4E8B10DCB82F6E1AF5BB14B8937D52C719EA83FA5641A7B25
 Provenance capture:
 - capture enabled;
 - all disabled;
-- compress enabled;
+- provenance has been captured;
+- node compression enabled;
+- edge compression enabled;
+- duplication disabled;
 
-Node filter (640):
-Relation filter (8008000):
+Node filter (4000640):
+inode_unknown
+directory
+char
+envp
+Derived filter (0):
+Generated filter (0):
+Used filter (0):
+Informed filter (0):
 
-Propagate node filter (640):
-Propagate relation filter (0):
+Propagate node filter (0):
+Propagate derived filter (0):
+Propagate generated filter (0):
+Propagate used filter (0):
+Propagate informed filter (0):
+
 IPv4 ingress filter (0).
 IPv4 egress filter (0).
 Security context filter (0).
