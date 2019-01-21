@@ -11,7 +11,7 @@ The quickest way to install CamFlow is through the packages hosted on [packagecl
 
 ``` BASH
 curl -s https://packagecloud.io/install/repositories/camflow/provenance/script.rpm.sh | sudo bash
-sudo dnf install camflow
+sudo dnf -y install camflow
 ```
 
 Next we need to activate the two CamFlow services:
