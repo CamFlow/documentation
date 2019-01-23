@@ -138,5 +138,4 @@ vagrant up
 
 ## After Reboot
 
-When booting a VM after successful provisioning, ensure that the CamFlow kernel is chosen in the [GRUB](https://www.gnu.org/software/grub/) menu:
-![Select CamFlow kernel in the grub menu](http://camflow.org/img/grub.png)
+When booting a VM after successful provisioning, ensure that the CamFlow kernel is chosen in the [GRUB](https://www.gnu.org/software/grub/) menu.
