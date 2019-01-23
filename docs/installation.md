@@ -27,6 +27,8 @@ After reboot we should be ready to use CamFlow.
 sudo reboot now
 ```
 
+**Note:** We are a small research team. Packages are tested in virtual environment running over a limited set of hardware configurations. In most cases things work fine. However, if you encounter any issue, please do look at how to build the project from source.
+
 ## 2. Building from source
 
 ### Dependencies
@@ -80,6 +82,8 @@ This will build and install the CamFlow Linux Security Module as well as the use
 
 The kernel configuration derives from the configuration currently present on the system where you run the build. Early in the build process you will be presented with a GUI to customise the kernel configuration. If you are not sure what to do, do not modify the configuration.
 
+**Note:** configuration options need to be carefully considered in resource constrained enviornment.
+
 For the installation process to take effect you need to reboot the machine.
 
 ``` BASH
@@ -128,6 +132,9 @@ vagrant up
 vagrant halt
 vagrant up
 ```
+
+
+**Note:** running virtual machines is resource consuming. Please, make sure the host has sufficient resource to do so (disk space, RAM, CPU etc.).
 
 ## After Reboot
 
