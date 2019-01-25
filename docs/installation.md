@@ -28,7 +28,7 @@ sudo apt-get install -y linux-image-4.20.0camflow0.4.6+=4.20.0camflow0.4.6+-1
 sudo apt-get install -y linux-headers-4.20.0camflow0.4.6+=4.20.0camflow0.4.6+-1
 ```
 
-*NOTE:* check [online](https://packagecloud.io/camflow/provenance) to find the latest version number and update the above script accordingly.
+**Note:** check [online](https://packagecloud.io/camflow/provenance) to find the latest version number and update the above script accordingly.
 
 ### General
 
