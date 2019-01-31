@@ -22,7 +22,7 @@ curl -s https://packagecloud.io/install/repositories/camflow/provenance/script.d
 sudo apt-get install -y libprovenance=0.4.5-2
 sudo apt-get install -y camflowd=0.2.3-2
 sudo apt-get install -y camflow-cli=0.1.11-2
-sudo apt-get install -y camconfd=0.4.2-2
+sudo apt-get install -y camconfd=0.4.3-2
 sudo apt-get install -y linux-libc-dev=4.20.5camflow0.5.0+-1
 sudo apt-get install -y linux-image-4.20.5camflow0.5.0+=4.20.5camflow0.5.0+-1
 sudo apt-get install -y linux-headers-4.20.5camflow0.5.0+=4.20.5camflow0.5.0+-1
