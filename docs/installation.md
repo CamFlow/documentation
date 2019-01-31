@@ -19,13 +19,13 @@ sudo dnf -y install camflow
 ### Ubuntu
 ```BASH
 curl -s https://packagecloud.io/install/repositories/camflow/provenance/script.deb.sh | sudo bash
-sudo apt-get install -y libprovenance=0.4.4-2
-sudo apt-get install -y camflowd=0.2.2-2
-sudo apt-get install -y camflow-cli=0.1.10-2
-sudo apt-get install -y camconfd=0.4.1-2
-sudo apt-get install -y linux-libc-dev=4.20.0camflow0.4.6+-1
-sudo apt-get install -y linux-image-4.20.0camflow0.4.6+=4.20.0camflow0.4.6+-1
-sudo apt-get install -y linux-headers-4.20.0camflow0.4.6+=4.20.0camflow0.4.6+-1
+sudo apt-get install -y libprovenance=0.4.5-2
+sudo apt-get install -y camflowd=0.2.3-2
+sudo apt-get install -y camflow-cli=0.1.11-2
+sudo apt-get install -y camconfd=0.4.2-2
+sudo apt-get install -y linux-libc-dev=4.20.5camflow0.5.0+-1
+sudo apt-get install -y linux-image-4.20.5camflow0.5.0+=4.20.5camflow0.5.0+-1
+sudo apt-get install -y linux-headers-4.20.5camflow0.5.0+=4.20.5camflow0.5.0+-1
 ```
 
 **Note:** check [online](https://packagecloud.io/camflow/provenance) to find the latest version number and update the above script accordingly.
